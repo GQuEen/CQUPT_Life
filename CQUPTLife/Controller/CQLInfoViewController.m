@@ -28,14 +28,16 @@
     [self.view addSubview:infoView];
     
     NSString *URL = [NSString getURLString:PHOTO_API WithStuNum:self.model.stuNum];
-    NSLog(@"%@-",URL);
-    [CQLNetWork NetRequestGETWithRequestURL:URL WithParameter:nil WithReturnValeuBlock:^(id returnValue) {
-        UIImage *image = [UIImage imageWithData:returnValue];
-        infoView.imageView.image = image;
-        
-    } WithFailureBlock:^{
-        NSLog(@"照片请求错误");
-    }];
+    NSArray *strings = @[@"2014213071",@"2015211097"];
+    if ([strings containsObject:self.model.stuNum]) {
+        if ([self.model.stuNum isEqualToString:@"2014213071"]) {
+            infoView.imageView.image = [UIImage imageNamed:@"Photo_GG"];
+        }else if ([self.model.stuNum isEqualToString:@"2015211097"]) {
+            infoView.imageView.image = [UIImage imageNamed:@"Photo_JJ"];
+        }
+    }else {
+        [infoView.imageView sd_setImageWithURL:[NSURL URLWithString:URL] placeholderImage:[UIImage imageNamed:@"Photo"]];
+    }
     
     // Do any additional setup after loading the view.
 }

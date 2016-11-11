@@ -94,7 +94,12 @@
     _majorLabel.textColor = [UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1];
     _classLabel.textColor = [UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1];
     
-    _imageView.image = [UIImage imageNamed:@"Photo"];
+    _imageView.layer.shadowOffset = CGSizeMake(1, 1);
+    _imageView.layer.cornerRadius = 1;
+    _imageView.layer.shadowColor = [UIColor colorWithRed:198/255.0f green:199/255.0f blue:200/255.0f alpha:1].CGColor;
+    _imageView.layer.shadowRadius = 2;
+    _imageView.layer.shadowOpacity = 1;
+    
     _nameLabel.text = self.model.stuName;
     _stuNumLabel.text = self.model.stuNum;
     if ([_model.stuSex isEqualToString:@"男"]) {

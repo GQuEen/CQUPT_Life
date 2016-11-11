@@ -21,6 +21,9 @@
 #define GGWeak __weak __typeof(self) weakSelf = self
 
 #import <AFNetworking.h>
+#import <SDWebImageManager.h>
+#import <UIImageView+WebCache.h>
+#import <MBProgressHUD.h>
 #import "UIImage+Tool.h"
 #import "CQLNetWork.h"
 
