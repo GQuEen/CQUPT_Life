@@ -13,15 +13,15 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dic {
 
     if (self = [super init]) {
-        self.stuName = dic[@"xm"] ?: @"";
-        self.stuNum = dic[@"xh"] ?: @"";
-        self.stuSex = dic[@"xb"] ?: @"";
-        self.stuGrade = dic[@"nj"] ?: @"";
-        self.classNum = dic[@"bj"] ?: @"";
-        self.stuCollege = dic[@"yxm"] ?: @"";
-        self.stuCollegeNum = dic[@"yxh"] ?: @"";
-        self.stuMajor = dic[@"zym"] ?: @"";
-        self.stuMajorNum = dic[@"zyh"] ?: @"";
+        self.stuName = dic[@"xm"] ?: @" ";
+        self.stuNum = dic[@"xh"] ?: @" ";
+        self.stuSex = [dic[@"xb"] stringByReplacingOccurrencesOfString:@" " withString:@""];
+        self.stuGrade = [dic[@"nj"] stringByReplacingOccurrencesOfString:@" " withString:@""];
+        self.classNum = dic[@"bj"] ?: @" ";
+        self.stuCollege = dic[@"yxm"] ?: @" ";
+        self.stuCollegeNum = dic[@"yxh"] ?: @" ";
+        self.stuMajor = dic[@"zym"] ?: @" ";
+        self.stuMajorNum = dic[@"zyh"] ?: @" ";
     }
     return self;
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4C12697A1C2B4E842827A068 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C4D8D94427BE2A6D9CDE60 /* libPods.a */; };
+		9CCDC9EB1DD5737D00FEAC8A /* NSString+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDC9EA1DD5737D00FEAC8A /* NSString+Tool.m */; };
+		9CCDC9EE1DD587B300FEAC8A /* NSNull+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDC9ED1DD587B300FEAC8A /* NSNull+Helper.m */; };
 		9CE59FA91DD4187F00AC3E28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE59FA81DD4187F00AC3E28 /* main.m */; };
 		9CE59FAC1DD4187F00AC3E28 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE59FAB1DD4187F00AC3E28 /* AppDelegate.m */; };
 		9CE59FAF1DD4187F00AC3E28 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE59FAE1DD4187F00AC3E28 /* ViewController.m */; };
@@ -45,6 +47,10 @@
 /* Begin PBXFileReference section */
 		122FD78AA58EA5D5B2B8B178 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		96C4D8D94427BE2A6D9CDE60 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CCDC9E91DD5737D00FEAC8A /* NSString+Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tool.h"; sourceTree = "<group>"; };
+		9CCDC9EA1DD5737D00FEAC8A /* NSString+Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tool.m"; sourceTree = "<group>"; };
+		9CCDC9EC1DD587B300FEAC8A /* NSNull+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+Helper.h"; sourceTree = "<group>"; };
+		9CCDC9ED1DD587B300FEAC8A /* NSNull+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+Helper.m"; sourceTree = "<group>"; };
 		9CE59FA41DD4187F00AC3E28 /* CQUPTLife.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CQUPTLife.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CE59FA81DD4187F00AC3E28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9CE59FAA1DD4187F00AC3E28 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -167,6 +173,10 @@
 				9CE59FE81DD4A64600AC3E28 /* CQLCell.m */,
 				9CE59FEA1DD4B8FA00AC3E28 /* 性别女.png */,
 				9CE59FEB1DD4B8FA00AC3E28 /* 性别男.png */,
+				9CCDC9E91DD5737D00FEAC8A /* NSString+Tool.h */,
+				9CCDC9EA1DD5737D00FEAC8A /* NSString+Tool.m */,
+				9CCDC9EC1DD587B300FEAC8A /* NSNull+Helper.h */,
+				9CCDC9ED1DD587B300FEAC8A /* NSNull+Helper.m */,
 			);
 			path = CQUPTLife;
 			sourceTree = "<group>";
@@ -384,8 +394,10 @@
 				9CE59FE31DD496E800AC3E28 /* CQLNetWork.m in Sources */,
 				9CE59FE61DD49D1A00AC3E28 /* CQLStuInfoModel.m in Sources */,
 				9CE59FDD1DD420B500AC3E28 /* CQLInfoViewController.m in Sources */,
+				9CCDC9EB1DD5737D00FEAC8A /* NSString+Tool.m in Sources */,
 				9CE59FE91DD4A64600AC3E28 /* CQLCell.m in Sources */,
 				9CE59FE01DD484A600AC3E28 /* UIImage+Tool.m in Sources */,
+				9CCDC9EE1DD587B300FEAC8A /* NSNull+Helper.m in Sources */,
 				9CE59FAC1DD4187F00AC3E28 /* AppDelegate.m in Sources */,
 				9CE59FA91DD4187F00AC3E28 /* main.m in Sources */,
 			);

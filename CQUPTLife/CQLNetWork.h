@@ -10,17 +10,22 @@
 
 @interface CQLNetWork : NSObject
 
+@property (strong, nonatomic) AFHTTPSessionManager *manager;
+
 typedef void (^SucessWithJson) (id returnValue);
 typedef void (^FailureFunction)();
 
-+ (void)NetRequestGETWithRequestURL: (NSString *) requestURLString
+typedef NSURLSessionTask GGURLSessionTask;
+
++ (GGURLSessionTask *)NetRequestGETWithRequestURL: (NSString *) requestURLString
                       WithParameter: (NSDictionary *) parameter
                WithReturnValeuBlock: (SucessWithJson) successFunction
                    WithFailureBlock: (FailureFunction) failureFunction;
 
-+ (void)NetRequestPOSTWithRequestURL: (NSString *) requestURLString
++ (GGURLSessionTask *)NetRequestPOSTWithRequestURL: (NSString *) requestURLString
                        WithParameter: (NSDictionary *) parameter
                 WithReturnValeuBlock: (SucessWithJson) block
                     WithFailureBlock: (FailureFunction) failureBlock;
++ (void)cancelNetReuest;
 
 @end

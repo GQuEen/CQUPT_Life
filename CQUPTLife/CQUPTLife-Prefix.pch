@@ -18,7 +18,14 @@
 #define MAIN_SCREEN_W [UIScreen mainScreen].bounds.size.width
 
 #define MAIN_COLOR [UIColor colorWithRed:55/255.0 green:185/255.0 blue:235/255.0 alpha:1]
+#define GGWeak __weak __typeof(self) weakSelf = self
 
 #import <AFNetworking.h>
 #import "UIImage+Tool.h"
 #import "CQLNetWork.h"
+
+#import "NSString+Tool.h"
+
+//查询信息借口 参数 &searchKey=(学号，姓名) &page=(页码) &rows=(行数)
+#define STUINFO_API @"https://jwzx.cqupt.congm.in/jwzxtmp/data/json_studentList.php?dirId="
+

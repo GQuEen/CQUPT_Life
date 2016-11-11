@@ -14,7 +14,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self loadContentView];
         self.contentView.backgroundColor = [UIColor colorWithRed:250/255.0 green:250/255.0 blue:250/255.0 alpha:1];
-//        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
 }
@@ -46,7 +46,7 @@
     _collegeLabel.textColor = [UIColor colorWithRed:153/255.0f green:153/255.0f blue:153/255.0f alpha:1];
     _collegeLabel.font = [UIFont systemFontOfSize:13];
     
-    _sexImageView = [[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_backView.frame)-38, 30, 19, 19)];
+    _sexImageView = [[UIImageView alloc]init];
     
     
     _gradeLabel = [[UILabel alloc]init];
@@ -54,32 +54,46 @@
     _gradeLabel.font = [UIFont systemFontOfSize:13];
     
     [self.contentView addSubview:_backView];
-    [self.contentView addSubview:_nameLabel];
-    [self.contentView addSubview:_collegeLabel];
-    [self.contentView addSubview:_sexImageView];
-    [self.contentView addSubview:_gradeLabel];
+    [self.backView addSubview:_nameLabel];
+    [self.backView addSubview:_collegeLabel];
+    [self.backView addSubview:_sexImageView];
+    [self.backView addSubview:_gradeLabel];
     
+}
+
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    [super setHighlighted:highlighted animated:animated];
+    
+    if (highlighted) {
+        _backView.backgroundColor = [UIColor colorWithRed:230/255.0 green:231/255.0 blue:232/255.0 alpha:1];
+    }else {
+        _backView.backgroundColor = [UIColor whiteColor];
+    }
 }
 
 - (void)setModel:(CQLStuInfoModel *)model {
     _model = model;
+    
     _nameLabel.text = model.stuName;
-    _nameLabel.frame = CGRectMake(30, 30, 0, 0);
     [_nameLabel sizeToFit];
     
-    if ([model.stuSex isEqualToString:@"男        "]) {
+    if ([model.stuSex isEqualToString:@"男"]) {
         _sexImageView.image = [UIImage imageNamed:@"性别男.png"];
-    }else if ([model.stuSex isEqualToString:@"女        "]) {
+    }else if ([model.stuSex isEqualToString:@"女"]) {
         _sexImageView.image = [UIImage imageNamed:@"性别女.png"];
     }
     
     _collegeLabel.text = model.stuCollege;
-    _collegeLabel.frame = CGRectMake(30, CGRectGetMaxY(_backView.frame) - 35, 0, 0);
     [_collegeLabel sizeToFit];
     
     _gradeLabel.text = model.stuGrade;
-    _gradeLabel.frame = CGRectMake(CGRectGetMaxX(_backView.frame)-50, _collegeLabel.frame.origin.y, 0, 0);
     [_gradeLabel sizeToFit];
+    
+    _nameLabel.frame = (CGRect){{20,20},_nameLabel.frame.size};
+    _collegeLabel.frame = (CGRect){{20, _backView.frame.size.height - _collegeLabel.frame.size.height-20},_collegeLabel.frame.size};
+    _gradeLabel.frame = (CGRect){{_backView.frame.size.width-_gradeLabel.frame.size.width-20, _backView.frame.size.height-_gradeLabel.frame.size.height-20},_gradeLabel.frame.size};
+    _sexImageView.frame = (CGRect){{_backView.frame.size.width-39, 20}, {19, 19}};
+
 }
 
 
