@@ -78,9 +78,9 @@
     [_nameLabel sizeToFit];
     
     if ([model.stuSex isEqualToString:@"男"]) {
-        _sexImageView.image = [UIImage imageNamed:@"性别男.png"];
+        _sexImageView.image = [UIImage imageNamed:@"Male"];
     }else if ([model.stuSex isEqualToString:@"女"]) {
-        _sexImageView.image = [UIImage imageNamed:@"性别女.png"];
+        _sexImageView.image = [UIImage imageNamed:@"Famale"];
     }
     
     _collegeLabel.text = model.stuCollege;

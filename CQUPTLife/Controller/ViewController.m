@@ -129,6 +129,7 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if ([_searchBar.text isEqualToString:@""]) {
         _tableView.hidden = YES;
+        [CQLNetWork cancelNetReuest];
     }else {
         [self NetWorkWithSearchKey:searchText page:@"1" rows:@"20"];
 //        _tableView.hidden = NO;
