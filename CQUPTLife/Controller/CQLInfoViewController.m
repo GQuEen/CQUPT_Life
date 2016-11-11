@@ -28,13 +28,10 @@
     [self.view addSubview:infoView];
     
     NSString *URL = [NSString getURLString:PHOTO_API WithStuNum:self.model.stuNum];
-    NSArray *strings = @[@"2014213071",@"2015211097"];
+    NSArray *strings = @[@"2014213071",@"2015211097",@"2015211102",@"2015211106",@"2014211182"];
+    
     if ([strings containsObject:self.model.stuNum]) {
-        if ([self.model.stuNum isEqualToString:@"2014213071"]) {
-            infoView.imageView.image = [UIImage imageNamed:@"Photo_GG"];
-        }else if ([self.model.stuNum isEqualToString:@"2015211097"]) {
-            infoView.imageView.image = [UIImage imageNamed:@"Photo_JJ"];
-        }
+        infoView.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",self.model.stuNum]];
     }else {
         [infoView.imageView sd_setImageWithURL:[NSURL URLWithString:URL] placeholderImage:[UIImage imageNamed:@"Photo"]];
     }

@@ -46,6 +46,8 @@
 @property (strong, nonatomic) NSMutableArray<CQLStuInfoModel *> *modelArray;
 
 @property (copy, nonatomic) NSString *currentUrl;
+@property (copy, nonatomic) NSString *currentSearchKey;
+@property (copy, nonatomic) NSString *currentPage;
 
 @end
 
@@ -82,6 +84,9 @@
         _tableView.sectionHeaderHeight = 0;
         _tableView.sectionFooterHeight = 0;
         _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
+        
+        
+        [self setupMJRefresh];
     }
     return _tableView;
 
@@ -161,19 +166,45 @@
     [CQLNetWork NetRequestGETWithRequestURL:URL WithParameter:nil WithReturnValeuBlock:^(id returnValue) {
         weakSelf.modelArray = [NSMutableArray array];
         weakSelf.currentUrl = URL;
+        weakSelf.currentSearchKey = searchKey;
+        weakSelf.currentPage = page;
         NSLog(@"请求完成");
         for (int i = 0; i < ((NSArray *)returnValue[@"rows"]).count; i ++) {
             CQLStuInfoModel *model = [[CQLStuInfoModel alloc]initWithDictionary:returnValue[@"rows"][i]];
             [weakSelf.modelArray addObject:model];
         }
-        
-//        NSLog(@"%@",_model);
         weakSelf.tableView.hidden = NO;
+        if (weakSelf.modelArray.count >= 20) {
+            weakSelf.tableView.mj_footer.hidden = NO;
+        }else {
+            weakSelf.tableView.mj_footer.hidden = YES;
+        }
         [weakSelf.tableView reloadData];
+        [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
     } WithFailureBlock:^{
         NSLog(@"请求错误");
     }];
     
+}
+
+- (void)setupMJRefresh {
+    GGWeak;
+    _tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        NSString *URL = [NSString getURLString:STUINFO_API WithSearchKey:weakSelf.currentSearchKey page:[NSString stringWithFormat:@"%ld",[weakSelf.currentPage integerValue]+1] rows:@"20"];
+        [CQLNetWork NetRequestGETWithRequestURL:URL WithParameter:nil WithReturnValeuBlock:^(id returnValue) {
+            weakSelf.currentPage = [NSString stringWithFormat:@"%ld",[weakSelf.currentPage integerValue]+1];
+            NSLog(@"请求第%@页的数据完成",weakSelf.currentPage);
+            for (int i = 0; i < ((NSArray *)returnValue[@"rows"]).count; i ++) {
+                CQLStuInfoModel *model = [[CQLStuInfoModel alloc]initWithDictionary:returnValue[@"rows"][i]];
+                [weakSelf.modelArray addObject:model];
+            }
+            weakSelf.tableView.hidden = NO;
+            [weakSelf.tableView reloadData];
+            [weakSelf.tableView.mj_footer endRefreshing];
+        } WithFailureBlock:^{
+            NSLog(@"请求错误");
+        }];
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
