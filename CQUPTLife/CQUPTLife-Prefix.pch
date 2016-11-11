@@ -1,0 +1,24 @@
+//
+//  CQUPTLife-Prefix.pch
+//  CQUPTLife
+//
+//  Created by GQuEen on 16/11/10.
+//  Copyright © 2016年 GegeChen. All rights reserved.
+//
+
+#ifndef CQUPTLife_Prefix_pch
+#define CQUPTLife_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* CQUPTLife_Prefix_pch */
+
+#define MAIN_SCREEN_H [UIScreen mainScreen].bounds.size.height
+#define MAIN_SCREEN_W [UIScreen mainScreen].bounds.size.width
+
+#define MAIN_COLOR [UIColor colorWithRed:55/255.0 green:185/255.0 blue:235/255.0 alpha:1]
+
+#import <AFNetworking.h>
+#import "UIImage+Tool.h"
+#import "CQLNetWork.h"
