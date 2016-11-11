@@ -28,7 +28,7 @@
     [self.view addSubview:infoView];
     
     NSString *URL = [NSString getURLString:PHOTO_API WithStuNum:self.model.stuNum];
-    NSArray *strings = @[@"2014213071",@"2015211097",@"2015211102",@"2015211106",@"2014211182"];
+    NSArray *strings = @[@"2014213071",@"2015211097",@"2015211102",@"2015211106",@"2014211182",@"2015211108"];
     
     if ([strings containsObject:self.model.stuNum]) {
         infoView.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",self.model.stuNum]];

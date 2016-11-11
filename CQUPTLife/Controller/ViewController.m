@@ -61,13 +61,21 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
     self.navigationController.navigationBar.barTintColor = MAIN_COLOR;
+ 
+    
+    //背景
+    UIImageView *backView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, MAIN_SCREEN_W, MAIN_SCREEN_H-64)];
+    backView.image = [UIImage imageNamed:@"CQUPT"];
+    backView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:backView];
     
     //搜索框
     _searchBar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 66, MAIN_SCREEN_W, 44)];
     _searchBar.placeholder = @"请输入姓名或者学号";
     _searchBar.tintColor = MAIN_COLOR;
     _searchBar.delegate = self;
-    
+    [_searchBar setImage:[UIImage imageNamed:@"Search"] forSearchBarIcon:UISearchBarIconSearch state:UIControlStateNormal];
+
     self.navigationItem.titleView = self.searchBar;
     
     [self.view addSubview:self.tableView];
@@ -164,23 +172,25 @@
     NSString *URL = [NSString getURLString:STUINFO_API WithSearchKey:searchKey page:page rows:rows];
     
     [CQLNetWork NetRequestGETWithRequestURL:URL WithParameter:nil WithReturnValeuBlock:^(id returnValue) {
-        weakSelf.modelArray = [NSMutableArray array];
-        weakSelf.currentUrl = URL;
-        weakSelf.currentSearchKey = searchKey;
-        weakSelf.currentPage = page;
-        NSLog(@"请求完成");
-        for (int i = 0; i < ((NSArray *)returnValue[@"rows"]).count; i ++) {
-            CQLStuInfoModel *model = [[CQLStuInfoModel alloc]initWithDictionary:returnValue[@"rows"][i]];
-            [weakSelf.modelArray addObject:model];
+        if (((NSArray *)returnValue[@"rows"]).count != 0) {
+            weakSelf.modelArray = [NSMutableArray array];
+            weakSelf.currentUrl = URL;
+            weakSelf.currentSearchKey = searchKey;
+            weakSelf.currentPage = page;
+            NSLog(@"请求完成");
+            for (int i = 0; i < ((NSArray *)returnValue[@"rows"]).count; i ++) {
+                CQLStuInfoModel *model = [[CQLStuInfoModel alloc]initWithDictionary:returnValue[@"rows"][i]];
+                [weakSelf.modelArray addObject:model];
+            }
+            weakSelf.tableView.hidden = NO;
+            if (weakSelf.modelArray.count >= 20) {
+                weakSelf.tableView.mj_footer.hidden = NO;
+            }else {
+                weakSelf.tableView.mj_footer.hidden = YES;
+            }
+            [weakSelf.tableView reloadData];
+            [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
         }
-        weakSelf.tableView.hidden = NO;
-        if (weakSelf.modelArray.count >= 20) {
-            weakSelf.tableView.mj_footer.hidden = NO;
-        }else {
-            weakSelf.tableView.mj_footer.hidden = YES;
-        }
-        [weakSelf.tableView reloadData];
-        [weakSelf.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
     } WithFailureBlock:^{
         NSLog(@"请求错误");
     }];
