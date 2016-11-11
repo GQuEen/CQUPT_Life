@@ -14,4 +14,6 @@
 
 //GET接口参数拼接
 + (NSString *)getURLString:(NSString *)url WithSearchKey:(NSString *)searchKey page:(NSString *)page rows:(NSString *)rows;
+
++ (NSString *)getURLString:(NSString *)url WithStuNum:(NSString *)stuNum;
 @end

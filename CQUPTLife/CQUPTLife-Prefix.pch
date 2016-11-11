@@ -26,6 +26,8 @@
 
 #import "NSString+Tool.h"
 
-//查询信息借口 参数 &searchKey=(学号，姓名) &page=(页码) &rows=(行数)
+//查询信息接口 参数 &searchKey=(学号，姓名) &page=(页码) &rows=(行数)
 #define STUINFO_API @"https://jwzx.cqupt.congm.in/jwzxtmp/data/json_studentList.php?dirId="
 
+//查询照片接口 参数 xh=（学号）
+#define PHOTO_API @"https://jwzx.cqupt.congm.in/showstuPic.php?xh="

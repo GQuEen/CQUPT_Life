@@ -10,6 +10,8 @@
 #import "CQLStuInfoModel.h"
 #import "CQLCell.h"
 
+#import "CQLInfoViewController.h"
+
 /*
  *
  *          ┌─┐       ┌─┐
@@ -114,7 +116,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-
+    
+    CQLStuInfoModel *model = self.modelArray[indexPath.section];
+    CQLInfoViewController *cvc = [[CQLInfoViewController alloc]init];
+    cvc.model = model;
+    [self.navigationController pushViewController:cvc animated:YES];
     
 }
 

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CQLStuInfoModel.h"
 
 @interface CQLInfoViewController : UIViewController
 
+@property (strong, nonatomic) CQLStuInfoModel *model;
 @end

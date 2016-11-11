@@ -25,5 +25,11 @@
     NSString *URLString = [newUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     return URLString;
 }
-
++ (NSString *)getURLString:(NSString *)url WithStuNum:(NSString *)stuNum{
+    NSString *newUrl = [NSString stringWithFormat:@"%@%@",url,stuNum];
+    
+    //转UTF-8
+    NSString *URLString = [newUrl stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    return URLString;
+}
 @end
