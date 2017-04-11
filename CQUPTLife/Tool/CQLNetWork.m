@@ -53,6 +53,7 @@ static NSMutableArray<GGURLSessionTask *> *tasks;
     GGURLSessionTask *sessionTask = nil;
     GGWeak;
     AFHTTPSessionManager *maneger = [AFHTTPSessionManager manager];
+    maneger.securityPolicy.allowInvalidCertificates = YES;
     sessionTask = [maneger POST:requestURLString parameters:parameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (successFunction) {
             successFunction(responseObject);

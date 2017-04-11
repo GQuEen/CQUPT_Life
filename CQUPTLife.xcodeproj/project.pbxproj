@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C12697A1C2B4E842827A068 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96C4D8D94427BE2A6D9CDE60 /* libPods.a */; };
+		669373214EC48897D3A4898D /* libPods-CQUPTLife.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8CA53F0C81417D2265B89F /* libPods-CQUPTLife.a */; };
 		9CCDC9F51DD59FC200FEAC8A /* CQLInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDC9F21DD59FC200FEAC8A /* CQLInfoViewController.m */; };
 		9CCDC9F61DD59FC200FEAC8A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDC9F41DD59FC200FEAC8A /* ViewController.m */; };
 		9CCDC9FA1DD5A07700FEAC8A /* CQLStuInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCDC9F91DD5A07700FEAC8A /* CQLStuInfoModel.m */; };
@@ -44,8 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		122FD78AA58EA5D5B2B8B178 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		96C4D8D94427BE2A6D9CDE60 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E8CA53F0C81417D2265B89F /* libPods-CQUPTLife.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CQUPTLife.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DB1788B136B41FB07777E95 /* Pods-CQUPTLife.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CQUPTLife.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CQUPTLife/Pods-CQUPTLife.debug.xcconfig"; sourceTree = "<group>"; };
+		7D180A46C90B7FB0183BE697 /* Pods-CQUPTLife.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CQUPTLife.release.xcconfig"; path = "Pods/Target Support Files/Pods-CQUPTLife/Pods-CQUPTLife.release.xcconfig"; sourceTree = "<group>"; };
 		9CCDC9F11DD59FC200FEAC8A /* CQLInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQLInfoViewController.h; sourceTree = "<group>"; };
 		9CCDC9F21DD59FC200FEAC8A /* CQLInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQLInfoViewController.m; sourceTree = "<group>"; };
 		9CCDC9F31DD59FC200FEAC8A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		9CE59FCC1DD4187F00AC3E28 /* CQUPTLifeUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CQUPTLifeUITests.m; sourceTree = "<group>"; };
 		9CE59FCE1DD4187F00AC3E28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CE59FDA1DD41BF000AC3E28 /* CQUPTLife-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CQUPTLife-Prefix.pch"; sourceTree = "<group>"; };
-		FC204C8038E1CFD8C1A9ACD1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C12697A1C2B4E842827A068 /* libPods.a in Frameworks */,
+				669373214EC48897D3A4898D /* libPods-CQUPTLife.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,23 +108,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4C2D6F3835109CE447FDFB10 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				96C4D8D94427BE2A6D9CDE60 /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		898FDD08AA649DDF7EC7DD90 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FC204C8038E1CFD8C1A9ACD1 /* Pods.debug.xcconfig */,
-				122FD78AA58EA5D5B2B8B178 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		9CCDC9F01DD59FC200FEAC8A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,8 +161,8 @@
 				9CE59FC01DD4187F00AC3E28 /* CQUPTLifeTests */,
 				9CE59FCB1DD4187F00AC3E28 /* CQUPTLifeUITests */,
 				9CE59FA51DD4187F00AC3E28 /* Products */,
-				898FDD08AA649DDF7EC7DD90 /* Pods */,
-				4C2D6F3835109CE447FDFB10 /* Frameworks */,
+				D252963D495B5FB0B31AE9AB /* Pods */,
+				A4A2342976BFECC6DA5B8F6D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -238,6 +221,23 @@
 			path = CQUPTLifeUITests;
 			sourceTree = "<group>";
 		};
+		A4A2342976BFECC6DA5B8F6D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E8CA53F0C81417D2265B89F /* libPods-CQUPTLife.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D252963D495B5FB0B31AE9AB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DB1788B136B41FB07777E95 /* Pods-CQUPTLife.debug.xcconfig */,
+				7D180A46C90B7FB0183BE697 /* Pods-CQUPTLife.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,12 +245,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9CE59FD11DD4187F00AC3E28 /* Build configuration list for PBXNativeTarget "CQUPTLife" */;
 			buildPhases = (
-				4931EEFBCEBE125DBE16A04B /* Check Pods Manifest.lock */,
+				24872387BF81A95558A01C9E /* [CP] Check Pods Manifest.lock */,
 				9CE59FA01DD4187F00AC3E28 /* Sources */,
 				9CE59FA11DD4187F00AC3E28 /* Frameworks */,
 				9CE59FA21DD4187F00AC3E28 /* Resources */,
-				60B40B35AE63A8574F87A3BA /* Embed Pods Frameworks */,
-				9D8C909927F392A1EFB5F1F8 /* Copy Pods Resources */,
+				E98E48D21E59C4FA2333EAB8 /* [CP] Embed Pods Frameworks */,
+				54A1B6AF0F53D7A3E029483F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -308,6 +308,7 @@
 				TargetAttributes = {
 					9CE59FA31DD4187F00AC3E28 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = MFV8K76J3Y;
 					};
 					9CE59FBC1DD4187F00AC3E28 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -367,49 +368,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4931EEFBCEBE125DBE16A04B /* Check Pods Manifest.lock */ = {
+		24872387BF81A95558A01C9E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		60B40B35AE63A8574F87A3BA /* Embed Pods Frameworks */ = {
+		54A1B6AF0F53D7A3E029483F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CQUPTLife/Pods-CQUPTLife-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9D8C909927F392A1EFB5F1F8 /* Copy Pods Resources */ = {
+		E98E48D21E59C4FA2333EAB8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CQUPTLife/Pods-CQUPTLife-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -566,12 +567,15 @@
 		};
 		9CE59FD21DD4187F00AC3E28 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC204C8038E1CFD8C1A9ACD1 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 5DB1788B136B41FB07777E95 /* Pods-CQUPTLife.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = MFV8K76J3Y;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/chenxinhong/Desktop/CQUPTLife/CQUPTLife/CQUPTLife-Prefix.pch";
 				INFOPLIST_FILE = CQUPTLife/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiyeon.CQUPTLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -580,12 +584,15 @@
 		};
 		9CE59FD31DD4187F00AC3E28 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 122FD78AA58EA5D5B2B8B178 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 7D180A46C90B7FB0183BE697 /* Pods-CQUPTLife.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = MFV8K76J3Y;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/chenxinhong/Desktop/CQUPTLife/CQUPTLife/CQUPTLife-Prefix.pch";
 				INFOPLIST_FILE = CQUPTLife/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiyeon.CQUPTLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";

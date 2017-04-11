@@ -1,6 +1,9 @@
 platform :ios,8.0
   
-pod 'AFNetworking’
-pod 'MBProgressHUD'
-pod 'SDWebImage'
-pod 'MJRefresh'
+
+target 'CQUPTLife' do
+  pod 'AFNetworking’
+  pod 'MBProgressHUD'
+  pod 'SDWebImage'
+  pod 'MJRefresh'
+end

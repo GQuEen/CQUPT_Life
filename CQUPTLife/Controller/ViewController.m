@@ -65,8 +65,8 @@
     
     //背景
     UIImageView *backView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, MAIN_SCREEN_W, MAIN_SCREEN_H-64)];
-    backView.image = [UIImage imageNamed:@"CQUPT"];
-    backView.contentMode = UIViewContentModeScaleAspectFit;
+    backView.image = [UIImage imageNamed:@"BackImage"];
+//    backView.contentMode = UIViewContentModeScaleAspectFit;
     [self.view addSubview:backView];
     
     //搜索框
